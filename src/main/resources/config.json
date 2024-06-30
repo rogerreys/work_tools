@@ -1,0 +1,15 @@
+{
+  "primary": {
+    "destinationFolder": "./jars",
+    "download": "true",
+    "enviroment": "dev2"
+  },
+  "dev2": {
+    "bucketName": "dev2-loans-t1-batch-executablefiledirectory-507781971948",
+    "awsProfile": "507781971948_BI-XMEN-COBIS-DEV-D1-R2"
+  },
+  "qa02": {
+    "bucketName": "qa02-loans-t1-batch-executablefiledirectory-507781971948",
+    "awsProfile": "125277160564_COBDevelopersECR"
+  }
+}
