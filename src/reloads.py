@@ -34,8 +34,18 @@ class Reloads:
         self.patter_re = r"sql:'(.*)', prms:\[([^\]]*)\]"
 
         self.patter_param_val = r"Parameter value: ([^,]+)"
-        self.patter_error_sent = r"Error in sentence: (.*)"
+        self.patter_error_sent = r"(Error in sentence: .*)"
         self.patter_param = r"(.*)\sParameters: \{([^}]*)\}"
+        self.patter_invoking = r"(Invoking:.*)"
+
+    def get_invoking_bl(self, logs) -> list:
+        pattern = re.compile(self.patter_invoking)
+        matches = pattern.findall(logs)
+
+        matches_stand = []
+        for match in matches:
+            matches_stand.append((match, ''))
+        return matches_stand
 
     def get_normal_queries(self, logs) -> list:
         """
@@ -108,4 +118,6 @@ class Reloads:
                 content.append(self.get_normal_queries(logs))
             elif self.get_error_queries(logs):
                 content.append(self.get_error_queries(logs))
+            elif self.get_invoking_bl(logs):
+                content.append(self.get_invoking_bl(logs))
         return content
