@@ -1,5 +1,6 @@
 {
   "config": {
-    "path": "logs_cloudWatch.txt"
+    "path_logs": "logs_cloudWatch.txt",
+    "path_response": "response/logs/queries.txt"
   }
 }

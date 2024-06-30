@@ -1,4 +1,5 @@
-import json
+from datetime import datetime
+import json, os, errno
 
 
 class Utils:
@@ -109,7 +110,45 @@ class Utils:
             El valor de la clave 'path' dentro de 'config'.
         """
         try:
-            return json_data['config']['path']
+            return json_data['config']['path_logs'], json_data['config']['path_response']
         except KeyError:
             print("Error: La clave 'path' no se encuentra en la configuración del JSON.")
             return None
+
+    @staticmethod
+    def save_values_to_file(data, file_path):
+        """
+        Guarda el resultado de la función assignation_values en un archivo de texto.
+
+        Parámetros:
+        -----------
+        data : list
+            Lista de diccionarios que contienen las claves 'sql' y 'prms'.
+        file_path : str
+            La ruta del archivo donde se guardarán los resultados.
+        """
+        try:
+            # Obtener el nombre del archivo de la ruta completa
+            base_name, ext = os.path.splitext(os.path.basename(file_path))
+            current_time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+
+            filename = f"{base_name}_{current_time}{ext}"
+
+            # Crear las carpetas necesarias si no existen
+            folder_path = os.path.dirname(file_path)
+
+            file_path = f"{folder_path}/{filename}"
+            if folder_path:
+                os.makedirs(folder_path, exist_ok=True)
+
+            with open(file_path, 'a', encoding='utf-8') as file:
+                file.write(data + '\n')
+        except OSError as e:
+            if e.errno == errno.ENOENT:
+                print(f"Error: No se encontró el directorio para '{file_path}'")
+            else:
+                print(f"Error al guardar los resultados en el archivo: {e}")
+        except Exception as e:
+            print(f"Error al guardar los resultados en el archivo: {e}")
+
+        return f"Resultados guardados en '{file_path}'"
