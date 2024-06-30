@@ -3,3 +3,21 @@ env/
 .idea/
 response/
 *.txt
+
+build/
+dist/
+app.spec
+# Ignorar todos los archivos .txt
+*.txt
+
+# Ignorar archivos de configuración de sistema operativo
+.DS_Store
+Thumbs.db
+
+# Ignorar carpetas de entorno virtual de Python
+venv/
+.env/
+
+# Ignorar archivos de caché de Python
+__pycache__/
+*.pyc
