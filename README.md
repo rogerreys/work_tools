@@ -1,14 +1,6 @@
 ## assignation_values
 read file:      jsonQuery.json
+
 content file:   {"sql":"QUERY", "prms":["val", 0, "val2", ....]}
+
 return:         QUERY con lo PARAMATROS
-
-## get_parameter_json
-read file:      params.txt
-content file:   "Parameters: {  Parameter name: @w_fecha_proceso Parameter value: 2023-10-03 00:00:00,  Parameter name: @o_est_vendido out Parameter value: 10,  Parameter name: @w_rubro_int Parameter value: INT,  Parameter name: @w_rubro_int Parameter value: INT,  Parameter name: @w_rubro_cap Parameter value: CAP,  Parameter name: @o_est_cancelado out Parameter value: 3,  Parameter name: @o_est_vencido out Parameter value: 2,  Parameter name: @o_est_vencido out Parameter value: 2,  Parameter name: @o_est_vigente out Parameter value: 1,  Parameter name: @o_est_vigente out Parameter value: 1,  Parameter name: @o_est_vencido out Parameter value: 2,  Parameter name: @o_est_cancelado out Parameter value: 3,  Parameter name: @o_est_cancelado out Parameter value: 3,  Parameter name: @w_rubro_imo Parameter value: IMO,  Parameter name: @w_rubro_int Parameter value: INT,  Parameter name: @w_rubro_intant Parameter value: INTANT,  Parameter name: @w_rubro_cap Parameter value: CAP,  Parameter name: @o_est_vencido out Parameter value: 2,  Parameter name: @o_est_vigente out Parameter value: 1,  Parameter name: @o_est_vencido out Parameter value: 2,  Parameter name: @w_rubro_cap Parameter value: CAP,  Parameter name: @w_rubro_cap Parameter value: CAP,  Parameter name: @o_est_vigente out Parameter value: 1,  Parameter name: @w_rubro_int Parameter value: INT,  Parameter name: @w_rubro_intant Parameter value: INTANT,  Parameter name: @o_est_vigente out Parameter value: 1,  Parameter name: @w_rubro_ivaint Parameter value: IVA_INT,  Parameter name: @o_est_vigente out Parameter value: 1,  Parameter name: @w_fecha_proceso Parameter value: 2023-10-03 00:00:00,  Parameter name: @o_est_cancelado out Parameter value: 3,  Parameter name: @w_fecha_proceso Parameter value: 2023-10-03 00:00:00,  Parameter name: @w_fecha_proceso Parameter value: 2023-10-03 00:00:00,  Parameter name: @o_est_vencido out Parameter value: 2,  Parameter name: @o_est_vencido out Parameter value: 2,  Parameter name: @o_est_vencido out Parameter value: 2,  Parameter name: @o_est_vencido out Parameter value: 2,  Parameter name: @o_est_vencido out Parameter value: 2,  Parameter name: @o_est_cancelado out Parameter value: 3,  Parameter name: @w_fecha_proceso Parameter value: 2023-10-03 00:00:00,  Parameter name: @w_fecha_proceso Parameter value: 2023-10-03 00:00:00,  Parameter name: @w_rubro_int Parameter value: INT,  Parameter name: @o_est_cancelado out Parameter value: 3,  Parameter name: @w_fecha_ini Parameter value: 2023-10-01 00:00:00,  Parameter name: @w_fecha_proceso Parameter value: 2023-10-03 00:00:00,  Parameter name: @o_est_cancelado out Parameter value: 3,  Parameter name: @w_fecha_ini Parameter value: 2023-10-01 00:00:00,  Parameter name: @w_fecha_ini Parameter value: 2023-10-01 00:00:00,  Parameter name: @w_fecha_proceso Parameter value: 2023-10-03 00:00:00, }"
-return:         ["2023-10-03 00:00:00", 10, "INT", ...]
-
-## get_parameter_array
-read file:      params.txt
-content file:   [2023-10-04 00:00:00, 10, INT] 
-return:         ["2023-10-04 00:00:00", 10, "INT"]
