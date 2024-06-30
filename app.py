@@ -25,7 +25,3 @@ if __name__ == '__main__':
         logs = Utils.read_file_to_variable(path_logs)
 
         get_queries_by_log(logs, path_result)
-    # if path is not None:
-    #     print("El valor de 'path' es:", path)
-
-

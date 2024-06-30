@@ -53,8 +53,13 @@ class Reloads:
         """
         pattern = re.compile(self.patter_re)
         matches = pattern.findall(logs)
-
-        return matches
+        matches_error = []
+        for match in matches:
+            query, prm = match
+            prm_list = [p.strip() for p in prm.split(",")]
+            values_p = [float(x) if Utils.is_number(x) else x for x in prm_list]
+            matches_error.append((query, values_p))
+        return matches_error
 
     def get_error_queries(self, log) -> list:
         """
@@ -83,7 +88,7 @@ class Reloads:
                 values_p = [float(x) if Utils.is_number(x) else x for x in values]
                 matches_error.append((m[0][0].strip(), values_p))
             else:
-                matches_error.append((match.strip(), None))
+                matches_error.append((match.strip(), ''))
 
         return matches_error
 
